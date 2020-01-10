@@ -1,0 +1,22 @@
+class DataTypes
+{
+static int i;
+static char c;
+static byte b;
+static long l;
+static short s;
+static float f;
+static boolean bl;
+static double d;
+public static void main(String[] args)
+{
+System.out.println("Interger:"+i );
+System.out.println(c);
+System.out.println(s);
+System.out.println(bl);
+System.out.println(b);
+System.out.println(d);
+System.out.println(f);
+System.out.println(l);
+}
+}
