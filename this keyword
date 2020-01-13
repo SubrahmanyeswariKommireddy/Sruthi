@@ -1,0 +1,232 @@
+//this ---> referencing the current object
+
+//refer current class instance //ERROR
+/*    // ambiguity occurs here --> output - 0 null
+public class ThisKeyword {
+	int id;
+	String name;
+	ThisKeyword(int id, String name)
+	{
+		id=id;
+		name=name;
+	}
+	void display()
+	{
+		System.out.println(id+" "+name);
+	}
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+        ThisKeyword tw=new ThisKeyword(12,"priya");
+        tw.display();
+	}
+
+}
+*/
+
+/*     // WITHOUT ERROR
+class ThisKeyword
+{
+	int id;
+	String name;
+	ThisKeyword(int id,String name)
+	{
+		this.id=id;
+		this.name=name;
+	}
+	void display()
+	{
+		System.out.println(id+" "+name);
+	}
+	public static void main(String[] args)
+	{
+	ThisKeyword tw=new ThisKeyword(213,"priya");
+	tw.display();
+	}
+}
+*/
+
+//refer current class method
+/*
+class ThisKeyword
+{
+	void m()
+	{
+		System.out.println("m method is invoked");
+	}
+	void n()
+	{
+		System.out.println("n method is invoked");
+		//m(); 
+		//or
+		this.m();
+	}
+	public static void main(String[] args)
+	{
+		ThisKeyword tw=new ThisKeyword();
+		tw.n();
+	}
+}
+*/
+
+// invoke current class constructor
+//calling default constructor from parameterized constructor
+/*
+class ThisKeyword 
+{
+	ThisKeyword()
+	{
+		System.out.println("constructor is invoked");
+	}
+	ThisKeyword(int a)
+	{
+		this();
+		System.out.println("parameterized constructor is invoked "+ a);
+		
+		
+	}
+	public static void main(String[] args)
+	{
+		
+		ThisKeyword tw=new ThisKeyword(10);
+		
+	}
+}
+*/
+
+//calling parameterized constructor from default constructor
+/*
+class ThisKeyword
+{
+	ThisKeyword()
+	{
+		this(5);
+		System.out.println("default constructor");
+	}
+	ThisKeyword(int i)
+	{
+	System.out.println("parameterized constructor: "+i);	
+	}
+	public static void main(String[] args)
+	{
+		ThisKeyword tw=new ThisKeyword();
+	}
+}
+*/
+
+//chaining the constructor - the real use
+/*
+  class ThisKeyword
+ 
+{
+	int id;
+	String name;
+	String dept;
+	ThisKeyword(int id,String name)
+	{
+		this.id=id;
+		this.name=name;
+	}
+	ThisKeyword(int id,String name,String dept)
+	{
+		this(id,name); 
+		
+		this.dept=dept;
+	}
+	void display()
+	{
+		System.out.println(id+" "+name+" "+dept);
+	}
+	public static void main(String[] args)
+	{
+		ThisKeyword tw1=new ThisKeyword(111,"priyanka");
+		tw1.display();
+		ThisKeyword tw2=new ThisKeyword(111,"priyanka","CSE");
+		tw2.display();
+	}
+}
+/*
+
+
+//pass "this" as an argument
+// in a situation where we have to provide reference of a class
+//---to another one. It is used to reuse one object in many methods.
+/*
+class ThisKeyword
+{
+	void m(ThisKeyword obj)
+	{
+		System.out.println("method is invoked");
+	}
+	void p()
+	{
+		m(this);
+	}
+	public static void main(String[] args)
+	{
+		ThisKeyword tw=new ThisKeyword();
+		tw.p();
+	}
+}
+*/
+
+// pass "this" to the constructor class
+// use one object to reference to its many classes
+
+/*
+
+class A
+{
+	ThisKeyword obj;
+	A(ThisKeyword obj)
+	{
+		this.obj=obj;
+	}
+	void display()
+	{
+		System.out.println(obj.a);
+	}
+}
+class ThisKeyword
+{
+		int a=10;
+	ThisKeyword(){
+		A ob=new A(this);
+		ob.display();
+	}
+	public static void main(String[] args)
+	{
+		ThisKeyword tw=new ThisKeyword();
+	}
+}
+*/
+
+//return using this
+/*
+class A{  
+A getA(){  
+return this;  
+}  
+void msg(){System.out.println("Hello java");}  
+}  
+class ThisKeyword{  
+public static void main(String args[]){  
+new A().getA().msg();  
+}  
+}
+*/
+
+//proving this keyword
+/*
+class ThisKeyword
+{
+void m(){  
+System.out.println(this);//prints same reference ID  
+}  
+public static void main(String args[]){  
+	ThisKeyword obj=new ThisKeyword();  
+System.out.println(obj);//prints the reference ID  
+obj.m();  
+}  
+}
+*/
