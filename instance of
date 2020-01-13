@@ -1,0 +1,40 @@
+class Animal {
+}
+
+class Dog extends Animal {
+}
+
+public class UseInstanceOf {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Dog obj = new Dog();
+		Animal a = new Animal();
+		if (obj instanceof Dog) {
+			System.out.println("obj is an instance of dog");
+		} else {
+			System.out.println("obj is not an instance of dog");
+		}
+
+		if (obj instanceof Animal)
+
+		{
+			System.out.println("obj is an instance of animal");
+		} else {
+			System.out.println("obj is not an instance of animal");
+			
+			
+		}
+		if (a instanceof Dog) {
+			System.out.println("a is an instance of dog");
+		} else {
+			System.out.println("a is not an instance of dog");
+		}
+		if (a instanceof Animal) {
+			System.out.println("a is an instance of Animal");
+		} else {
+			System.out.println("a is not an instance of animal");
+		}
+	}
+
+}
