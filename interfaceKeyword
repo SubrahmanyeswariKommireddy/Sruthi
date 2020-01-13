@@ -1,0 +1,115 @@
+
+/*
+interface printable
+{
+	void run();
+}
+class InterfaceKw implements printable {
+public void run()
+{
+	System.out.println("running");
+}
+	public static void main(String[] args)
+	{
+		InterfaceKw iw=new InterfaceKw();
+		iw.run();
+	}
+}
+
+*/
+
+
+/*
+interface Drawable{  
+void draw();  
+}  
+//Implementation: by second user  
+class Rectangle implements Drawable{  
+public void draw(){System.out.println("drawing rectangle");}  
+}  
+class Circle implements Drawable{  
+public void draw(){System.out.println("drawing circle");}  
+}  
+//Using interface: by third user  
+class InterfaceKw{  
+public static void main(String args[]){  
+Drawable d=new Circle();//In real scenario, object is provided by method e.g. getDrawable()  
+d.draw();  
+}}
+*/
+
+//multiple inheritance by interface
+/*
+
+interface Printable{  
+void print();  
+}  
+interface Showable{  
+void show();  
+}  
+class InterfaceKw implements Printable,Showable{  
+public void print(){System.out.println("Hello");}  
+public void show(){System.out.println("Welcome");}  
+  
+public static void main(String args[]){  
+InterfaceKw obj = new InterfaceKw();  
+obj.print();  
+obj.show();  
+ }  
+}
+*/
+// if two interfaces have same methods
+
+/*
+interface Printable{  
+void print();  
+}  
+interface Showable{  
+void print();  
+}  
+class InterfaceKw implements Printable,Showable{  
+public void print(){System.out.println("Hello");}  
+  
+public static void main(String args[]){  
+	InterfaceKw obj = new InterfaceKw();  
+obj.print();  
+ 
+ }  
+}
+*/
+
+//we can have method body in interface. But we need to make it default method
+/*
+interface Drawable{  
+void draw();  
+default void msg(){System.out.println("default method");}  
+}  
+class Rectangle implements Drawable{  
+public void draw(){System.out.println("drawing rectangle");}  
+}  
+class InterfaceKw{  
+public static void main(String args[]){  
+Drawable d=new Rectangle();  
+d.draw();  
+d.msg();  
+}} 
+*/
+
+// static methods
+/*
+
+interface Drawable{  
+void draw();  
+static int cube(int x){return x*x*x;}  
+}  
+class Rectangle implements Drawable{  
+public void draw(){System.out.println("drawing rectangle");}  
+}  
+  
+class InterfaceKw{  
+public static void main(String args[]){  
+Drawable d=new Rectangle();  
+d.draw();  
+System.out.println(Drawable.cube(3));  
+}}
+*/
