@@ -1,0 +1,151 @@
+
+/*
+class Data
+{
+	int id;
+	String name;
+	static String college_name="kiet"; //use static keyword
+	Data(int i,String n)
+	{
+		id=i;
+		name=n;
+	}
+	void display()
+	{
+		System.out.println(id+"- "+ name+" "+"from  "+college_name);
+	}
+}
+public class StaticKeyword {
+public static void main(String[] args)
+{
+	Data d1=new Data(111,"saran");
+	Data d2=new Data(222,"priya");
+	d1.display();
+	d2.display();
+}
+}
+*/
+
+//without using static keyword
+/*
+class StaticKeyword {
+	int side;
+	int objectCount = 0; // no static keyword used here
+
+	StaticKeyword() {   //default constructor
+		objectCount++;
+		System.out.println(objectCount);
+	}
+	
+	
+
+	public static void main(String[] args)
+	{
+		StaticKeyword sk1=new StaticKeyword();
+		StaticKeyword sk2=new StaticKeyword();
+		StaticKeyword sk3=new StaticKeyword();
+		
+	}
+}
+*/
+
+ //with using static keyword
+/*
+class StaticKeyword {
+	int side;
+	static int objectCount = 0;
+
+	StaticKeyword() {   //default constructor
+		objectCount++;
+		System.out.println(objectCount);
+	}
+	
+	
+
+	public static void main(String[] args)
+	{
+		StaticKeyword sk1=new StaticKeyword();
+		StaticKeyword sk2=new StaticKeyword();
+		StaticKeyword sk3=new StaticKeyword();
+		
+	}
+}
+*/
+
+// static method
+
+/*
+ 
+class Student
+{
+	int id;
+	String name;
+	static String college_name="ITS"; // static variables can be changed only by static methods
+	Student(int i,String n)
+	{
+		id=i;
+		name=n;
+	}
+	static void change()//it can be called only with the class name
+	{
+		college_name="Kiet";
+	}
+	void display()
+	{
+		System.out.println(id+" "+name +" " + college_name);
+	}
+	
+}
+class StaticKeyword
+{
+	public static void main(String[] args) {
+		Student.change();  // calling a static method
+	
+	Student s1=new Student(201,"priya");
+	Student s2=new Student(301,"keerthi");
+	s1.display();
+	s2.display();
+}
+}
+*/
+
+/*
+class StaticKeyword //as a calculator
+{
+	static int cube(int i)
+	{
+		return i*i*i;
+	}
+	public static void main(String[] args)
+	
+	{
+		int result=StaticKeyword.cube(5);
+		System.out.println(result);
+	}
+}
+*/
+
+/*
+class StaticKeyword //as main is a static method , it access only static variables 
+{
+	//int a=10; //-->error // cant access non static variable
+	public static void main(String[] args)
+	{
+		int a=10;
+		System.out.println(a);
+	}
+}
+*/
+//static block
+/*
+class StaticKeyword
+{
+	static {
+		System.out.println("static block is invoked first");
+	}
+	public static void main(String[] args)
+	{
+		System.out.println("main method is invoked");
+	}
+}
+*/
