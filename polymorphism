@@ -1,0 +1,118 @@
+/*
+
+class Bike
+{
+	void run()
+	{
+		System.out.println("Running");
+	}
+}
+
+class ClassPolymorphism extends Bike { //assume class polymorphism as a splendor.
+	void run()
+	{
+		System.out.println("running safely");
+	}
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		ClassPolymorphism cp=new ClassPolymorphism();
+		cp.run();
+	}
+
+}
+*/
+//By upcasting --Hierarchy
+/*
+class Shape {
+	void draw() {
+		System.out.println("drawing");
+	}
+}
+
+class Rectangle extends Shape {
+	void draw() {
+		System.out.println("Drawing rectangele");
+	}
+}
+
+class Circle extends Shape {
+	void draw()
+	{
+	
+		System.out.println("Drawing Circle");
+	}
+}
+
+class Triangle extends Shape {
+	void draw() {
+		System.out.println("Drawing Traingle");
+	}
+}
+
+class ClassPolymorphism
+{
+	public static void main(String[] args)
+	{
+		Shape s;
+		s=new Rectangle();
+		s.draw();
+		s=new Circle();
+		s.draw();
+		s=new Triangle();
+		s.draw();
+	}
+}
+*/
+
+
+//Multilevel
+
+/*
+class Animal1
+{
+	void eat()
+	{
+		System.out.println("Eating");
+	}
+}
+class Dog1 extends Animal1
+{
+	void eat()
+	{
+		System.out.println("Dog is eating");
+	}
+	void extra_eat()
+	{
+		System.out.println("dog eating extra food");
+	}
+}
+class ClassPolymorphism extends Dog1  //assume class polymorphism as a babydog
+{
+	void eat()
+	{
+		System.out.println("BabyDog is eating");
+	}
+	
+	
+	public static void main(String[] args)
+	{
+		//Animal1 a1,a2,a3;
+		// a1=new Animal1();
+		//a1.eat();
+		//a1=new Dog1();    //extra eat method is not possible by using upcasting.
+		//a1.eat();
+		//a1=new ClassPolymorphism();  
+		//a1.eat();
+		
+		Animal1 a1=new Dog1();
+		Dog1 d1=(Dog1)a1;
+		d1.eat();
+		d1.extra_eat();
+		
+		
+		Dog1 d2=new ClassPolymorphism();
+		ClassPolymorphism cp=(ClassPolymorphism)d2;
+		cp.eat();
+	}
+}
+*/
