@@ -1,0 +1,110 @@
+
+
+	//non paramaterized constructor
+
+/*	 
+	class Classconstructor {
+	
+	 Classconstructor()
+		{
+			System.out.println("constructor");
+		}
+		
+	public static void main(String[] args)
+	{
+		Classconstructor c=new Classconstructor();
+		
+	}
+	}
+	
+	*/
+
+	//parameterized constructor
+
+	/*
+	import java.util.*;
+	class Classconstructor
+	{
+		int id;
+		String name;
+
+	 Classconstructor(int i, String n)
+		{
+			id=i;
+			name=n;
+		}
+		void display()
+		{
+			System.out.println(id+"  "+name);
+		}
+	public static void main(String[] args)
+	{
+		System.out.println("enter id::");
+		Scanner scan=new Scanner(System.in);
+		int id1=scan.nextInt();
+		System.out.println("enter name::");
+		Scanner sc=new Scanner(System.in);
+		String name1=sc.nextLine();
+		Classconstructor c1=new Classconstructor(id1,name1);
+		c1.display();
+		scan.close();
+		sc.close();
+	}
+	}
+	
+*/
+
+	//default constructor
+	/*
+	class Classconstructor
+	{
+	int id;
+	String name;
+	void display()
+	{
+	System.out.println(id+" "+name);
+	}
+	public static void main(String[] args)
+	{
+		Classconstructor ce1=new Classconstructor();
+		ce1.display();
+		Classconstructor ce2=new Classconstructor();
+		ce2.display();
+	}
+	}
+	*/
+
+	//constructor overloading
+	
+/*
+	class Classconstructor
+	{
+		
+		Classconstructor(int a)
+		{
+			System.out.println(a);
+		}
+		Classconstructor(int a,double b)
+		{
+			System.out.println(a+b);
+		}
+		Classconstructor(int a,int b,int c)
+		{
+			System.out.println(a+b+c);
+		}
+		Classconstructor(int a,String name)
+		{
+			System.out.println(a+" "+name);
+		}
+		public static void main(String [] args)
+		{
+			Classconstructor ce=new Classconstructor(2,3.4);
+			Classconstructor ce1=new Classconstructor(2,3,4);
+			Classconstructor ce2=new Classconstructor(222,"saranya");
+		}
+	}
+	*/
+	
+
+
+
