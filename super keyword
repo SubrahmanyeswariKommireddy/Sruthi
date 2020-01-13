@@ -1,0 +1,103 @@
+// super --used to refer the parent class variable/method/constructor
+
+/*
+class Animal12{  
+String color="white";  
+}  
+class Dog12 extends Animal12{  
+String color="black";  
+void printColor(){  
+System.out.println(color); 
+System.out.println(super.color);//refer parent class variable  
+}  
+} 
+public class SuperKeyword {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Dog12 d=new Dog12();  
+		d.printColor();
+
+	}
+
+}
+ 
+*/
+
+/*
+class Animal123
+{
+void eat(){System.out.println("eating");}  
+}  
+class Dog123 extends Animal123{  
+void eat(){System.out.println("eating bread");}  
+void bark(){System.out.println("barking");}  
+void work(){  
+super.eat();  // refer parent class method
+bark();  
+}  
+}  
+class SuperKeyword{  
+public static void main(String args[]){  
+Dog123 d=new Dog123();  
+d.work();  
+}} 
+*/
+
+
+/*
+class Animal_12{  
+Animal_12(){System.out.println("animal is created");}  
+}  
+class Dog_1 extends Animal_12{  
+Dog_1(){  
+//super();  //-->compiler implicitly add super to its child.
+System.out.println("dog is created");  
+}  
+}  
+class SuperKeyword{  
+public static void main(String args[]){  
+Dog_1 d=new Dog_1();  
+}}
+*/
+
+// referring method
+/*
+class Person
+{
+	int id;
+	String name;
+	String dept;
+	Person(int id,String name)
+	{
+		this.id=id;
+		this.name=name;
+	}
+	void display()
+	{
+		System.out.println(id+" "+name);
+	}
+}
+class Emp extends Person
+{
+	Emp(int id,String name,String dept)
+	{
+		super(id,name); //Refer Method
+		this.dept=dept;
+	}
+	void display()
+	{
+		System.out.println(id+" "+name+" "+dept);
+	}
+}
+class SuperKeyword
+{
+	public static void main(String[] args)
+	{
+		Person tw1=new Person(111,"priyanka");
+		tw1.display();
+		Emp tw2=new Emp(111,"priyanka","CSE");
+		tw2.display();
+	}
+}
+*/
