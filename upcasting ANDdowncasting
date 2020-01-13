@@ -1,0 +1,57 @@
+class Fruit
+{
+void Show()
+{
+	System.out.println("Parent class is invoked");
+}
+	}
+class Apple extends Fruit
+{
+	void Show()
+	{
+		System.out.println("child class is invoked");
+	}
+	void Showclass()
+	{
+		System.out.println("Another child class is invoked");
+	}
+}
+public class UpcastDowncast {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		  Fruit f=new Fruit();
+	       f.Show();
+		
+	   Apple a=new Apple();
+       a.Show();
+       a.Showclass();
+     
+       //upcasting
+       Fruit obj1=new Apple(); //if Fruit obj1 = new Fruit(); then get an runtime error 
+       //obj.Show();
+       
+       //downcasting
+       
+       Apple obj2=(Apple)obj1;
+       obj2.Showclass(); // calls unique method in subclass
+      
+       
+      
+       
+       //obj.Showclass();     ----------->error
+       
+       
+      /*if(obj1 instanceof Apple)
+       {
+    	   Apple obj2=(Apple)obj1;
+           obj2.Showclass();//calls unique method
+       }
+       else
+       {
+    	   System.out.println("nothing invoked");
+       }*/
+       
+	}
+
+}
