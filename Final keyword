@@ -1,0 +1,122 @@
+//final keyword - not to change variable value
+
+/*
+
+class FinalKeyword {
+	
+	 void run()
+	 {
+		 final int speedLimit=400;
+		 System.out.println(speedLimit);
+	 }
+	 void run2()
+	 {
+		 speedLimit=90; //cant be changed here
+		 System.out.println(speedLimit);
+	 }
+	 
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+FinalKeyword fw=new FinalKeyword();
+fw.run();
+fw.run2();
+	}
+
+}
+*/
+//method by using final keyword
+
+/*
+class FwParent
+{
+	final void run()
+	{
+		System.out.println("this method is invoked");
+	}
+}
+
+class FinalKeyword extends FwParent
+{
+	
+	void run()   //final method cant be overridden
+	{
+	
+		System.out.println("cant be overridden");
+	}
+	public static void main(String[] args)
+	{
+		FinalKeyword fw=new FinalKeyword();
+		fw.run();
+	}
+	
+}
+*/
+
+//final class can't be inherited
+/*
+final class FwParent
+{
+}
+class FinalKeyword extends FwParent
+{
+	public static void main(String[] args)
+	{
+		System.out.println("cant inherit the final class");
+	}
+}
+*/
+
+//can't be Overridden but can Inherited  
+/*
+class FwParent{  
+  final void run(){System.out.println("running");}  
+}  
+class FinalKeyword extends FwParent{  
+   public static void main(String args[]){  
+    new FinalKeyword().run();  
+   }  
+}
+*/
+
+
+/*
+class FinalKeyword{  
+  final int speedlimit;//blank final variable  
+    
+  FinalKeyword(){  
+  speedlimit=70;  
+  System.out.println(speedlimit);  
+  }  
+  
+  public static void main(String args[]){  
+    new FinalKeyword();  
+ }  
+ 
+}
+*/
+
+//static blank final variable can be initiazed only by static block
+
+/*
+class FinalKeyword{  
+  static final int data;//static blank final variable  
+  static{ data=50;}  
+  public static void main(String args[]){  
+    System.out.println(FinalKeyword.data);  
+ }  
+}
+*/
+
+// final parameter cant be changed
+/*
+class FinalKeyword{  
+  int cube(final int n){  
+   n=n+2;     //can't be changed as n is final  
+   n*n*n;  
+  }  
+  public static void main(String args[]){  
+	  FinalKeyword b=new FinalKeyword();  
+    b.cube(5);  
+ }  
+}
+*/
