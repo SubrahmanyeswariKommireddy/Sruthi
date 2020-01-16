@@ -1,0 +1,168 @@
+/*
+class ExceptionHandlingJava {
+	
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+		try
+		{
+			int a=50/0;
+		}
+		catch(ArithmeticException e)
+		{
+			System.out.println(e);
+			System.out.println("Rest Code is executed");
+		}
+	}
+
+}
+*/
+//Nested TRY block
+
+/*
+class ExceptionHandlingJava {
+	
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+		try
+		{
+			try {
+				System.out.println("going to divide");
+				int a=39/0;
+			}
+			catch(ArithmeticException e)
+			{
+				System.out.println(e);
+				System.out.println("rest of the code is executed");
+			}
+		}
+		catch(Exception e)
+		{
+			System.out.println("Handled");
+		}
+		System.out.println("Normal flow");
+	}
+
+}
+*/
+
+// Finally Block
+/*
+class ExceptionHandlingJava {
+	
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+		try
+		{
+			int a=50/0;
+		}
+		catch(ArithmeticException e) //check with NullPointerException also
+		{
+			System.out.println(e);
+			System.out.println("Rest Code is executed");
+		}
+		finally
+		{
+			System.out.println("Finally block is always executed whether the exception is handled or not");
+		}
+	}
+
+}
+*/
+
+//throw keyword
+
+/*
+class ExceptionHandlingJava {
+	static void validate(int age)
+	{
+		if(age<18)
+		{
+			throw new ArithmeticException("Not Valid");
+		}
+		else
+		{
+			System.out.println("Welcome to vote");
+		}
+	}
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+		validate(14);
+	}
+
+}
+
+*/
+
+//Exception propagation
+/*
+
+class ExceptionHandlingJava{  
+  void m(){  
+    int data=50/0;  
+  }  
+  void n(){  
+    m();  
+  }  
+  void p(){  
+   try{  
+    n();  
+   }catch(Exception e)
+   {
+	   System.out.println("exception handled");
+   }  
+  }  
+  public static void main(String args[]){  
+	  ExceptionHandlingJava obj=new ExceptionHandlingJava();  
+   obj.p();  
+   System.out.println("normal flow...");  
+  }  
+}
+*/
+
+
+//Custom Exception
+
+/*
+import java.lang.*;
+class InvalidAgeException extends Exception
+{
+	InvalidAgeException(String s)
+	{
+		
+		System.out.println(s);
+	}
+}
+
+class ExceptionHandlingJava
+{
+	static void validate(int age) throws InvalidAgeException
+	{
+		if(age<18)
+		{
+			throw new InvalidAgeException("Not Valid");
+		}
+		else
+		{
+			System.out.println("Welcome to vote");
+		}
+	}
+	public static void main(String[] args)
+	{
+		try {
+		validate(14);
+		}
+		catch(Exception m)
+		{
+			System.out.println("Exception Occurred");
+		}
+	}
+}
+*/
