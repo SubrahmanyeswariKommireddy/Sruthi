@@ -1,0 +1,106 @@
+package contactApplication;
+
+import java.util.Scanner;
+import java.util.HashMap;
+
+public class PhoneBook {
+	static Scanner scan = new Scanner(System.in);
+	static HashMap<String, ContactList> hash = new HashMap<String, ContactList>();
+
+	public static void printActions() {
+		System.out.println("Available Actions\n");
+		System.out.println(
+				" press 1. To Create a new Contact \n Press 2. To Delete a Contact \n Press 3. To List the Contacts \n Press 4. To Search for a Contact \n Press 5. Quit");
+		System.out.println("press number , which action to be performed");
+
+//	System.out.println("enter a number:");
+	}
+
+	public static void addNewContact() {
+		System.out.println("Enter name:");
+		String name = scan.next();
+		scan.nextLine();
+		System.out.println("Enter PhoneNumber:");
+	    String phoneNumber=scan.next();
+		System.out.println("Enter email:");
+		String email = scan.next();
+		System.out.println("Enter address:");
+		String address = scan.next();
+
+		ContactList newContact = ContactList.createContact(name, phoneNumber, email, address);
+		hash.put(email, newContact);
+		System.out.println("Contact added Succcesfuuly");
+		System.out.println(hash);
+	}
+
+	public static void DeleteContact() {
+		System.out.println(hash);
+		System.out.println("enter specific key to delete");
+		String obj = scan.next();
+		hash.remove(obj);
+		System.out.println("contact deleted ..!");
+		System.out.println(hash);
+	}
+
+	public static void ShowContacts() {
+		System.out.println("Contact List::");
+		System.out.println(hash);
+	}
+
+	public static void SearchContact() {
+		System.out.println(hash);
+		System.out.println("enter specific key to search");
+		String obj1 = scan.next();
+		if(hash.containsKey(obj1))
+		{
+			System.out.println("Contact Exists");
+		}
+		else
+			System.out.println("Contact not found");
+	}
+
+	public static void main(String[] args) {
+		boolean quit = false;
+		int action = -1;
+		printActions();
+		action = scan.nextInt();
+		while (!quit) {
+			switch (action) {
+			case 1:
+				addNewContact();
+				printActions();
+				System.out.println("enter a number:");
+				action = scan.nextInt();
+//            quit=true;
+				break;
+			case 2:
+				DeleteContact();
+				printActions();
+				System.out.println("enter a number:");
+				action = scan.nextInt();
+//			quit=true;
+				break;
+			case 3:
+				ShowContacts();
+				printActions();
+				System.out.println("enter a number:");
+				action = scan.nextInt();
+//			quit=true;
+				break;
+			case 4:
+				SearchContact();
+				printActions();
+				System.out.println("enter a number:");
+                action=scan.nextInt();
+				break;
+			case 5:
+				quit = true;
+				break;
+			default:
+				System.out.println("Invalid");
+				quit = true;
+			}
+		}
+
+	}
+}
